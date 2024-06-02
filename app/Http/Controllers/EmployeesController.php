@@ -26,11 +26,6 @@ class EmployeesController extends Controller
         $this->employees = resolve(Employee::class);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $employees = $this->employees->paginate();
@@ -38,11 +33,6 @@ class EmployeesController extends Controller
         return view('pages.employees-data', compact('employees'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $roles = resolve(Role::class)->get();
@@ -52,12 +42,6 @@ class EmployeesController extends Controller
         return view('pages.employees-data_create', compact('roles', 'departments', 'positions'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreEmployeeRequest $request)
     {
         $user = User::create([
@@ -105,23 +89,11 @@ class EmployeesController extends Controller
         return redirect()->route('employees-data')->with('status', 'Successfully created an employee.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
     public function show(Employee $employee)
     {
         return view('pages.employees-data_show', compact('employee'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Employee $employee)
     {
         $roles = resolve(Role::class)->get();
@@ -131,13 +103,6 @@ class EmployeesController extends Controller
         return view('pages.employees-data_edit', compact('employee', 'roles', 'departments', 'positions'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
     public function update(StoreEmployeeRequest $request, Employee $employee)
     {
         User::where('id', $request->input('user_id'))
@@ -182,12 +147,6 @@ class EmployeesController extends Controller
         return redirect()->route('employees-data')->with('status', 'Successfully updated an employee.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Employee  $employee
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Employee $employee)
     {
         User::where('id', $employee->user_id)->delete();

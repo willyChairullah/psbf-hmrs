@@ -100,13 +100,6 @@ class RolesController extends Controller
         return view('pages.roles_edit', compact('accessesForEditing', 'role'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Role  $role
-     * @return \Illuminate\Http\Response
-     */
     public function update(StoreRoleRequest $request, Role $role)
     {
         $role->update([

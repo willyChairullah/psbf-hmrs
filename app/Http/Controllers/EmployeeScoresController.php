@@ -20,11 +20,7 @@ class EmployeeScoresController extends Controller
         
         $this->employeeScores = resolve(EmployeeScore::class);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $employeeScores = $this->employeeScores->getSimplifiedScores();

@@ -18,34 +18,19 @@ class AnnouncementsController extends Controller
         
         $this->announcements = resolve(Announcement::class);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $announcements = $this->announcements->paginate();
         return view('pages.announcements', compact('announcements'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $departments = Department::all();
         return view('pages.announcements_create', compact('departments'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreAnnouncementRequest $request)
     {
         $createArray = [
@@ -68,36 +53,17 @@ class AnnouncementsController extends Controller
         return redirect()->route('announcements')->with('status', 'Successfully created an announcement.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
     public function show(Announcement $announcement)
     {
         return view('pages.announcements_show', compact('announcement'));
     }
     
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Announcement $announcement)
     {
         $departments = Department::all();
         return view('pages.announcements_edit', compact('announcement', 'departments'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
     public function update(StoreAnnouncementRequest $request, Announcement $announcement)
     {
         $updateArray = [
@@ -122,12 +88,6 @@ class AnnouncementsController extends Controller
         return redirect()->route('announcements')->with('status', 'Successfully updated announcement.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Announcement $announcement)
     {
         Announcement::where([
