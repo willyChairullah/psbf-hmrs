@@ -16,11 +16,6 @@ class DashboardController extends Controller
     private $employees;
     private $recruitmentCandidates;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -30,11 +25,6 @@ class DashboardController extends Controller
         $this->recruitmentCandidates = resolve(RecruitmentCandidate::class);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $announcements = $this->announcements->paginate();

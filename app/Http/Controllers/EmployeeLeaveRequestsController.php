@@ -20,11 +20,7 @@ class EmployeeLeaveRequestsController extends Controller
 
         $this->employeeLeaveRequests = resolve(EmployeeLeaveRequest::class);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $employeeLeaveRequests = $this->employeeLeaveRequests->paginate();
@@ -32,22 +28,11 @@ class EmployeeLeaveRequestsController extends Controller
         return view('pages.employees-leave-request', compact('employeeLeaveRequests'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('pages.employees-leave-request_create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreEmployeeLeaveRequest $request)
     {
         $employeeLeave = EmployeeLeave::where('employee_id', $request->input('employee_id'))->first();
@@ -79,12 +64,6 @@ class EmployeeLeaveRequestsController extends Controller
         return redirect()->route('employees-leave-request')->with('status', 'Successfully created an employee leave request.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\EmployeeLeaveRequest  $employeeLeaveRequest
-     * @return \Illuminate\Http\Response
-     */
     public function show(EmployeeLeaveRequest $employeeLeaveRequest)
     {
         $employeeLeaveRequest->load('employee', 'checkedBy');
@@ -103,24 +82,11 @@ class EmployeeLeaveRequestsController extends Controller
         return view('pages.employees-leave-request_show', compact('employeeLeaveRequest', 'employeeLeave', 'diff'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\EmployeeLeaveRequest  $employeeLeaveRequest
-     * @return \Illuminate\Http\Response
-     */
     public function edit(EmployeeLeaveRequest $employeeLeaveRequest)
     {
         return view('pages.employees-leave-request_edit', compact('employeeLeaveRequest'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\EmployeeLeaveRequest  $employeeLeaveRequest
-     * @return \Illuminate\Http\Response
-     */
     public function update(StoreEmployeeLeaveRequest $request, EmployeeLeaveRequest $employeeLeaveRequest)
     {
         if($request->type == 'edit') {
@@ -165,12 +131,6 @@ class EmployeeLeaveRequestsController extends Controller
         };
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\EmployeeLeaveRequest  $employeeLeaveRequest
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(EmployeeLeaveRequest $employeeLeaveRequest)
     {
         $this->employeeLeaveRequests->where('id', $employeeLeaveRequest->id)
