@@ -4,11 +4,11 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Employees' Data</h4>
+        <h4 class="font-weight-bold">Data Karyawan</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12 mb-3">
       <div class="bg-light text-dark card p-3 overflow-auto">
@@ -33,11 +33,11 @@
           <thead>
             <tr>
               <th scope="col" class="table-dark">#</th>
-              <th scope="col" class="table-dark">Name</th>
-              <th scope="col" class="table-dark">Position</th>
-              <th scope="col" class="table-dark">Department</th>
-              <th scope="col" class="table-dark">Start of Contract</th>
-              <th scope="col" class="table-dark">End of Contract</th>
+              <th scope="col" class="table-dark">Nama</th>
+              <th scope="col" class="table-dark">Posisi</th>
+              <th scope="col" class="table-dark">Divisi</th>
+              <th scope="col" class="table-dark">Dimulainya Kontrak</th>
+              <th scope="col" class="table-dark">Berakhirnya Kontrak</th>
             </tr>
           </thead>
           <tbody>
@@ -53,7 +53,7 @@
             @endforeach
           </tbody>
         </table>
-        {{ $employees->links() }}  
+        {{ $employees->links() }}
       </div>
     </div>
   </div>

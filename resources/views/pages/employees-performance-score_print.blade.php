@@ -4,11 +4,11 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Employees' Performance Scores</h4>
+        <h4 class="font-weight-bold">Performa Karyawan</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12 mb-3">
       <div class="bg-light text-dark card p-3 overflow-auto">
@@ -16,10 +16,10 @@
           <thead>
             <tr>
               <th scope="col" class="table-dark">#</th>
-              <th scope="col" class="table-dark">Employee Name</th>
-              <th scope="col" class="table-dark">Score</th>
-              <th scope="col" class="table-dark">Scored By</th>
-              <th scope="col" class="table-dark">Date</th>
+              <th scope="col" class="table-dark">Nama Karyawan</th>
+              <th scope="col" class="table-dark">Skor</th>
+              <th scope="col" class="table-dark">Di Evaluasi Oleh</th>
+              <th scope="col" class="table-dark">Tanggal</th>
             </tr>
           </thead>
           <tbody>

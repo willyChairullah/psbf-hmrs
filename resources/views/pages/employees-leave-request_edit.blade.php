@@ -4,14 +4,14 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Employees' Leave Requests</h4>
+        <h4 class="font-weight-bold">Permintaan Cuti Karyawan</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
-        <h5 class="text-center font-weight-bold mb-3">Create A New Employee Leave Request</h5>
+        <h5 class="text-center font-weight-bold mb-3">Buat Permintaan Baru</h5>
         <form action="{{ route('employees-leave-request.update', ['employeeLeaveRequest' => $employeeLeaveRequest->id ]) }}" method="POST">
           @csrf
           @method('PUT')
@@ -21,8 +21,8 @@
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="from">From:</label>
-                  <input type="date" name="from" id="from" class="form-control @error('from') is-invalid @enderror" value="{{ $employeeLeaveRequest->from }}" placeholder="Enter start of contract date" required>
+                  <label for="from">Dari:</label>
+                  <input type="date" name="from" id="from" class="form-control @error('from') is-invalid @enderror" value="{{ $employeeLeaveRequest->from }}" placeholder="Masukkan Dimulainya Permintaan" required>
                 </div>
                 @error('from')
                   <div class="alert alert-danger">{{ $message }}</div>
@@ -30,8 +30,8 @@
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="to">To:</label>
-                  <input type="date" name="to" id="to" class="form-control @error('to') is-invalid @enderror" value="{{ $employeeLeaveRequest->to }}" placeholder="Enter end of contract date" required>
+                  <label for="to">Ke:</label>
+                  <input type="date" name="to" id="to" class="form-control @error('to') is-invalid @enderror" value="{{ $employeeLeaveRequest->to }}" placeholder="Masukkan Berakhirnya Permintaan" required>
                 </div>
                 @error('to')
                   <div class="alert alert-danger">{{ $message }}</div>
@@ -42,8 +42,8 @@
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  <label for="message">Message:</label>
-                  <input type="text" name="message" id="message" class="form-control @error('message') is-invalid @enderror" value="{{ $employeeLeaveRequest->message }}" placeholder="Enter message" required>
+                  <label for="message">Pesan:</label>
+                  <input type="text" name="message" id="message" class="form-control @error('message') is-invalid @enderror" value="{{ $employeeLeaveRequest->message }}" placeholder="Masukkan Pesan" required>
                 </div>
                 @error('message')
                   <div class="alert alert-danger">{{ $message }}</div>

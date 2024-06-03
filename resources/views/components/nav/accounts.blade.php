@@ -1,6 +1,6 @@
 <a href="#accountSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
     <i class="fas fa-users mr-2"></i>
-    Accounts
+    Akun
 </a>
 <ul class="collapse list-unstyled" id="accountSubmenu">
     <li class="nav-item">

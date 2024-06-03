@@ -4,7 +4,7 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Attendances</h4>
+        <h4 class="font-weight-bold">Kehadiran</h4>
         <hr>
     </div>
   </div>
@@ -34,11 +34,11 @@
           <thead>
             <tr>
               <th scope="col" class="table-dark">#</th>
-              <th scope="col" class="table-dark">Employee Name</th>
-              <th scope="col" class="table-dark">In / Out</th>
-              <th scope="col" class="table-dark">Type</th>
-              <th scope="col" class="table-dark">Message</th>
-              <th scope="col" class="table-dark">Date</th>
+              <th scope="col" class="table-dark">Nama Karyawan</th>
+              <th scope="col" class="table-dark">Masuk / Keluar</th>
+              <th scope="col" class="table-dark">Tipe</th>
+              <th scope="col" class="table-dark">Pesan</th>
+              <th scope="col" class="table-dark">Tanggal</th>
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@
             @endforeach
           </tbody>
         </table>
-        {{ $attendances->links() }}  
+        {{ $attendances->links() }}
       </div>
     </div>
   </div>

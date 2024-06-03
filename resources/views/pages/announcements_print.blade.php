@@ -4,11 +4,11 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12 text-center">
-        <h4 class="font-weight-bold">Announcements</h4>
+        <h4 class="font-weight-bold">Pengumuman</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12 mb-3">
       <div class="bg-light text-dark card p-3 overflow-auto">
@@ -16,12 +16,12 @@
           <thead>
             <tr>
               <th scope="col" class="table-dark">#</th>
-              <th scope="col" class="table-dark">Title</th>
-              <th scope="col" class="table-dark">Description</th>
-              <th scope="col" class="table-dark">Attachment</th>
-              <th scope="col" class="table-dark">Created By</th>
-              <th scope="col" class="table-dark">For</th>
-              <th scope="col" class="table-dark">Date</th>
+              <th scope="col" class="table-dark">Judul</th>
+              <th scope="col" class="table-dark">Deskripsi</th>
+              <th scope="col" class="table-dark">Lampiran</th>
+              <th scope="col" class="table-dark">Dibuat Oleh</th>
+              <th scope="col" class="table-dark">Untuk</th>
+              <th scope="col" class="table-dark">Waktu Dibuat</th>
             </tr>
           </thead>
           <tbody>

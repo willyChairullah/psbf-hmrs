@@ -4,24 +4,24 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Employees' Data</h4>
+        <h4 class="font-weight-bold">Data Karyawan</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
-        <h5 class="text-center font-weight-bold mb-3">Create A New Employee</h5>
+        <h5 class="text-center font-weight-bold mb-3">Buat Data Karyawan Baru</h5>
         <form action="{{ route('employees-data.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
-            <h6 class="font-weight-bold">Account Information</h6>
+            <h6 class="font-weight-bold">Informasi Akun</h6>
             <hr>
 
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="name">Name:</label>
+                  <label for="name">Nama:</label>
                   <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Enter name" required>
                 </div>
                 @error('name')
@@ -51,7 +51,7 @@
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="password_confirmation">Confirmation Password:</label>
+                  <label for="password_confirmation">Konfirmasi Password:</label>
                   <input type="password" name="password_confirmation" id="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" value="{{ old('password_confirmation') }}" placeholder="Enter password again" required>
                 </div>
                 @error('password_confirmation')
@@ -65,7 +65,7 @@
                 <div class="form-group">
                   <label for="role_id">Role:</label>
                   <select id="role_id" class="form-control @error('role_id') is-invalid @enderror" name="role_id" required>
-                    <option value="">Choose...</option>
+                    <option value="">Pilih...</option>
                     @foreach ($roles as $role)
                     <option value="{{ $role->id }}" {{ old('role_id') == $role->id ? 'selected': '' }}>
                       {{ $role->name }}
@@ -79,15 +79,15 @@
               </div>
             </div>
           </div>
-          
+
           <div class="mb-3">
-            <h6 class="font-weight-bold">Employee Information</h6>
+            <h6 class="font-weight-bold">Informasi Karyawan</h6>
             <hr>
 
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="start_of_contract">Start of Contract:</label>
+                  <label for="start_of_contract">Dimulainya Kontrak:</label>
                   <input type="date" name="start_of_contract" id="start_of_contract" class="form-control @error('start_of_contract') is-invalid @enderror" value="{{ old('start_of_contract') }}" placeholder="Enter start of contract date" required>
                 </div>
                 @error('start_of_contract')
@@ -96,7 +96,7 @@
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="end_of_contract">End of Contract:</label>
+                  <label for="end_of_contract">Berakhirnya Kontrak:</label>
                   <input type="date" name="end_of_contract" id="end_of_contract" class="form-control @error('end_of_contract') is-invalid @enderror" value="{{ old('end_of_contract') }}" placeholder="Enter end of contract date" required>
                 </div>
                 @error('end_of_contract')
@@ -108,9 +108,9 @@
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="department_id">Department:</label>
+                  <label for="department_id">Divisi:</label>
                   <select id="department_id" class="form-control @error('department_id') is-invalid @enderror" name="department_id" required>
-                    <option value="">Choose...</option>
+                    <option value="">Pilih...</option>
                     @foreach ($departments as $department)
                     <option value="{{ $department->id }}" {{ old('department_id') == $department->id ? 'selected': '' }}>
                       {{ $department->name }}
@@ -124,7 +124,7 @@
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="position_id">Position:</label>
+                  <label for="position_id">Posisi:</label>
                   <select id="position_id" class="form-control @error('position_id') is-invalid @enderror" name="position_id" required>
                     <option value="">Choose...</option>
                     @foreach ($positions as $position)
@@ -154,23 +154,23 @@
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
               </div>
-  
+
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="date_of_birth">Date Of Birth:</label>
+                  <label for="date_of_birth">Tanggal Lahir:</label>
                   <input type="date" name="date_of_birth" id="date_of_birth" class="form-control @error('date_of_birth') is-invalid @enderror" value="{{ old('date_of_birth') }}" placeholder="Enter date of birth" required>
                 </div>
                 @error('date_of_birth')
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
               </div>
-  
+
             </div>
-  
+
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="identity_number">Identity Number:</label>
+                  <label for="identity_number">NIK:</label>
                   <input type="text" name="identity_number" id="identity_number" class="form-control @error('identity_number') is-invalid @enderror" value="{{ old('identity_number') }}" placeholder="Enter identity number" required>
                 </div>
                 @error('identity_number')
@@ -179,7 +179,7 @@
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="phone">Phone:</label>
+                  <label for="phone">Nomor HP:</label>
                   <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Enter phone" required>
                 </div>
                 @error('phone')
@@ -187,11 +187,11 @@
                 @enderror
               </div>
             </div>
-  
+
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="address">Address:</label>
+                  <label for="address">Alamat:</label>
                   <input type="text" name="address" id="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}" placeholder="Enter address" required>
                 </div>
                 @error('address')
@@ -199,11 +199,11 @@
                 @enderror
               </div>
             </div>
-  
+
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="photo">Photo:</label>
+                  <label for="photo">Foto:</label>
                   <input type="file" name="photo" id="photo" class="form-control-file @error('photo') is-invalid @enderror" required>
                 </div>
                 @error('photo')
@@ -220,11 +220,11 @@
                 @enderror
               </div>
             </div>
-  
+
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="last_education">Last Education:</label>
+                  <label for="last_education">Pendidikan Terakhir:</label>
                   <input type="text" name="last_education" id="last_education" class="form-control @error('last_education') is-invalid @enderror" value="{{ old('last_education') }}" placeholder="Enter last education" required>
                 </div>
                 @error('last_education')
@@ -233,7 +233,7 @@
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="gpa">GPA:</label>
+                  <label for="gpa">IPK:</label>
                   <input type="text" name="gpa" id="gpa" class="form-control @error('gpa') is-invalid @enderror" value="{{ old('gpa') }}" placeholder="Enter GPA" required>
                 </div>
                 @error('gpa')
@@ -241,11 +241,11 @@
                 @enderror
               </div>
             </div>
-  
+
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="work_experience_in_years">Work Experience (in years):</label>
+                  <label for="work_experience_in_years">Pengalaman Kerja (Tahun):</label>
                   <input type="number" name="work_experience_in_years" id="work_experience_in_years" class="form-control @error('work_experience_in_years') is-invalid @enderror" value="{{ old('work_experience_in_years') }}" placeholder="Enter work experience in years" required>
                 </div>
                 @error('work_experience_in_years')

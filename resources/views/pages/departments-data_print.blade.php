@@ -4,11 +4,11 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12 text-center">
-        <h4 class="font-weight-bold">Departments' Data</h4>
+        <h4 class="font-weight-bold">Data Divisi</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12 mb-3">
       <div class="bg-light text-dark card p-3 overflow-auto">
@@ -16,9 +16,9 @@
           <thead>
             <tr>
               <th scope="col" class="table-dark">#</th>
-              <th scope="col" class="table-dark">Name</th>
-              <th scope="col" class="table-dark">Code</th>
-              <th scope="col" class="table-dark">Address</th>
+              <th scope="col" class="table-dark">Nama</th>
+              <th scope="col" class="table-dark">Kode</th>
+              <th scope="col" class="table-dark">Alamat</th>
             </tr>
           </thead>
           <tbody>

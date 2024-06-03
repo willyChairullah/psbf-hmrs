@@ -4,21 +4,21 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Employees' Performance Scores</h4>
+        <h4 class="font-weight-bold">Performa Karyawan</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
-        <h5 class="text-center font-weight-bold mb-3">Employee's Score Detail</h5>
+        <h5 class="text-center font-weight-bold mb-3">Detail Skor Performa Karyawan</h5>
         <div class="mb-3">
-          <h6 class="font-weight-bold">Employee Information</h6>
+          <h6 class="font-weight-bold">Informasi Karyawan</h6>
           <hr>
           <div class="row">
             <div class="col-sm-12 col-lg-6 offset-lg-6">
               <div class="form-group">
-                <label for="date">Date:</label>
+                <label for="date">Tanggal:</label>
                 <input type="text" id="date" value="{{ $employeeScore->created_at }}" class="form-control-plaintext" readonly>
               </div>
             </div>
@@ -26,13 +26,13 @@
           <div class="row">
             <div class="col-sm-12 col-lg-6">
               <div class="form-group">
-                <label for="employee_id">Employee Name:</label>
+                <label for="employee_id">Nama Karyawan:</label>
                 <input type="text" id="employee_id" value="{{ $employeeScore->employee->employeeDetail->name }}" class="form-control-plaintext" readonly>
               </div>
             </div>
             <div class="col-sm-12 col-lg-6">
               <div class="form-group">
-                <label for="scored_by">Scored By:</label>
+                <label for="scored_by">Di Evaluasi Oleh:</label>
                 <input type="text" id="scored_by" value="{{ $employeeScore->scoredBy->employeeDetail->name }}" class="form-control-plaintext" readonly>
               </div>
             </div>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="mb-3">
-          <h6 class="font-weight-bold">Scores</h6>
+          <h6 class="font-weight-bold">Skor</h6>
           <hr>
           @foreach ($scores as $score)
           <div class="row">

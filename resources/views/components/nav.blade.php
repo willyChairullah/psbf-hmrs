@@ -11,10 +11,10 @@
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a href="{{ url('/#announcements') }}" class="nav-link">Announcements</a>
+                <a href="{{ url('/#announcements') }}" class="nav-link">Pengumuman</a>
             </li>
             <li class="nav-item">
-                <a href="{{ url('/#recruitments') }}" class="nav-link">Recruitments</a>
+                <a href="{{ url('/#recruitments') }}" class="nav-link">Rekrutmen</a>
             </li>
           </ul>
 
@@ -27,7 +27,7 @@
                           <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                       </li>
                   @endif
-                  
+
                   @if (Route::has('register'))
                       <li class="nav-item">
                           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
