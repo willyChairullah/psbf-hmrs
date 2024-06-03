@@ -4,11 +4,11 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12 text-center">
-        <h4 class="font-weight-bold">Positions' Data</h4>
+        <h4 class="font-weight-bold">Data Posisi</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12 mb-3">
       <div class="bg-light text-dark card p-3 overflow-auto">
@@ -16,11 +16,11 @@
           <thead>
             <tr>
               <th scope="col" class="table-dark">#</th>
-              <th scope="col" class="table-dark">Name</th>
-              <th scope="col" class="table-dark">Description</th>
-              <th scope="col" class="table-dark">Min. Experience (in years)</th>
-              <th scope="col" class="table-dark">Salary</th>
-              <th scope="col" class="table-dark">Open for Recruitment</th>
+              <th scope="col" class="table-dark">Nama</th>
+              <th scope="col" class="table-dark">Deskripsi</th>
+              <th scope="col" class="table-dark">Min. Pengalaman (Tahun)</th>
+              <th scope="col" class="table-dark">Gaji</th>
+              <th scope="col" class="table-dark">Dibuka Untuk Perekrutan</th>
             </tr>
           </thead>
           <tbody>
@@ -31,10 +31,10 @@
               <td class="w-25">{{ $position->description }}</td>
               <td>{{ $position->min_year_exp_required }}</td>
               <td>{{ $position->salary }}</td>
-              <td><input type="checkbox" name="open_for_recruitment" disabled value="{{ !!$position->open_for_recruitment }}" 
-                @if ($position->open_for_recruitment) 
+              <td><input type="checkbox" name="open_for_recruitment" disabled value="{{ !!$position->open_for_recruitment }}"
+                @if ($position->open_for_recruitment)
                   checked
-                @endif 
+                @endif
               class="form-check-input"></td>
             </tr>
             @endforeach

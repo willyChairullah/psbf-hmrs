@@ -4,19 +4,19 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Announcements</h4>
+        <h4 class="font-weight-bold">Pengumuman</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
-        <h5 class="text-center font-weight-bold mb-3">Announcement's Detail</h5>
+        <h5 class="text-center font-weight-bold mb-3">Detail Pengumuman</h5>
         <div class="mb-3">
           <div class="row">
             <div class="col-12">
               <div class="form-group">
-                <label for="title">Title:</label>
+                <label for="title">Judul:</label>
                 <input type="text" name="title" id="title" class="form-control-plaintext" readonly value="{{ $announcement->title }}">
               </div>
             </div>
@@ -25,7 +25,7 @@
           <div class="row">
             <div class="col-12">
               <div class="form-group">
-                <label for="description">Description:</label>
+                <label for="description">Deskripsi:</label>
                 <input type="text" name="description" id="description" class="form-control-plaintext" readonly value="{{ $announcement->description }}">
               </div>
             </div>
@@ -34,7 +34,7 @@
           <div class="row">
             <div class="col-12  ">
               <div class="form-group">
-                <label for="department_id">For:</label>
+                <label for="department_id">Untuk:</label>
                 <input type="text" name="department_id" id="department_id" class="form-control-plaintext" readonly value="{{ $announcement->department_id ? $announcement->department_id : 'ALL' }}">
               </div>
             </div>
@@ -43,7 +43,7 @@
           <div class="row">
             <div class="col-12">
               <div class="form-group">
-                <label for="attachment">Attachment:</label>
+                <label for="attachment">Lampiran:</label>
                 <br>
                 <a href="{{ asset('/storage/' . $announcement->attachment) }}" download="attachment" class="btn btn-outline-dark">
                   <i class="fas fa-download mr-1"></i>
@@ -63,7 +63,7 @@
                 <button type="submit" class="btn btn-warning mr-2 px-5">Edit</button>
               </form>
             @endif
-            @if ($announcement->created_by == auth()->user()->employee->id || auth()->user()->isAdmin())             
+            @if ($announcement->created_by == auth()->user()->employee->id || auth()->user()->isAdmin())
               <form action="{{ route('announcements.destroy', ['announcement' => $announcement->id]) }}" method="POST" class="d-inline-block">
                 @csrf
                 @method('DELETE')

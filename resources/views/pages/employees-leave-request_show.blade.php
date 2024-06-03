@@ -4,19 +4,19 @@
 <div class="container-fluid mt-2 px-4">
   <div class="row">
     <div class="col-12">
-        <h4 class="font-weight-bold">Employees' Leave Requests</h4>
+        <h4 class="font-weight-bold">Permintaan Cuti Karyawan</h4>
         <hr>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-12">
-        <h5 class="text-center font-weight-bold mb-3">Employee Leave Request's Detail</h5>
+        <h5 class="text-center font-weight-bold mb-3">Detail Permintaan Cuti</h5>
         <div class="mb-3">
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  <label for="employee_name">Employee Name:</label>
+                  <label for="employee_name">Nama Karyawan:</label>
                   <input type="text" name="employee_name" value="{{ $employeeLeaveRequest->employee->name }}" class="form-control-plaintext" readonly>
                 </div>
               </div>
@@ -24,13 +24,13 @@
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="from">From:</label>
+                  <label for="from">Dari:</label>
                   <input type="date" name="from" id="from" class="form-control-plaintext" readonly value="{{ $employeeLeaveRequest->from }}">
                 </div>
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="to">To:</label>
+                  <label for="to">Ke:</label>
                   <input type="date" name="to" id="to" class="form-control-plaintext" readonly value="{{ $employeeLeaveRequest->to }}">
                 </div>
               </div>
@@ -39,13 +39,13 @@
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="leaveQuota">Employee Leaves:</label>
+                  <label for="leaveQuota">Kuota Cuti:</label>
                   <input type="number" name="leaveQuota" id="leaveQuota" value="{{ $employeeLeave->leaves_quota }}" class="form-control-plaintext" readonly>
                 </div>
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="leaveCount">Leave Days Count:</label>
+                  <label for="leaveCount">Perhitungan Cuti:</label>
                   <input type="number" name="leaveCount" id="leaveCount" value="{{ $diff }}" class="form-control-plaintext" readonly>
                 </div>
               </div>
@@ -54,7 +54,7 @@
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="message">Message:</label>
+                  <label for="message">Pesan:</label>
                   <input type="text" name="message" id="message" class="form-control-plaintext" readonly value="{{ $employeeLeaveRequest->message }}">
                 </div>
               </div>
@@ -69,20 +69,20 @@
             <div class="row">
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="checked_by">Checked By:</label>
+                  <label for="checked_by">Dicek Oleh:</label>
                   <input type="text" name="checked_by" id="checked_by" class="form-control-plaintext" readonly value="{{ isset($employeeLeaveRequest->checkedBy) ? $employeeLeaveRequest->checkedBy->name : ''   }}">
                 </div>
               </div>
               <div class="col-sm-12 col-lg-6">
                 <div class="form-group">
-                  <label for="comment">Comment:</label>
+                  <label for="comment">Komentar:</label>
                   <input type="text" name="comment" id="comment" class="form-control-plaintext" readonly value="{{ $employeeLeaveRequest->comment }}">
                 </div>
               </div>
             </div>
           </div>
 
-          @if ($employeeLeaveRequest->status == 'WAITING_FOR_APPROVAL' && collect($accesses)->where('menu_id', 4)->first()->status == 2)              
+          @if ($employeeLeaveRequest->status == 'WAITING_FOR_APPROVAL' && collect($accesses)->where('menu_id', 4)->first()->status == 2)
             <div class="row">
               <div class="col-12">
                 @if (auth()->user()->isAdmin())

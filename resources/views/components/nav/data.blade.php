@@ -4,12 +4,12 @@
 </a>
 <ul class="collapse list-unstyled" id="dataSubmenu">
     <li class="nav-item">
-        <a href="{{ route('employees-data') }}" class="nav-link">Employees</a>
+        <a href="{{ route('employees-data') }}" class="nav-link">Karyawan</a>
     </li>
     <li class="nav-item">
-        <a href="{{ route('departments-data') }}" class="nav-link">Departments</a>
+        <a href="{{ route('departments-data') }}" class="nav-link">Divisi</a>
     </li>
     <li class="nav-item">
-        <a href="{{ route('positions-data') }}" class="nav-link">Positions</a>
+        <a href="{{ route('positions-data') }}" class="nav-link">Posisi</a>
     </li>
 </ul>
